@@ -8,6 +8,8 @@ import { useDispatch } from 'react-redux';
 import { createPost } from '../../actions/postActions';
 
 const Form = () => {
+    const classes = useStyles();
+
     // State is an object for the post information
     const [postData, setPostData] = useState({
         creator: '',
@@ -17,7 +19,6 @@ const Form = () => {
         selectedFile: ''
     });
     const dispatch = useDispatch();
-    const classes = useStyles();
     const handleSubmit = (event) => {
         // Dispatch upon submit for post request
         event.preventDefault();
@@ -31,7 +32,7 @@ const Form = () => {
         <Paper className={classes.paper}>
             <form
                 autoComplete="off"
-                className={classes.form}
+                className={`${classes.root} ${classes.form}`}
                 onSubmit={handleSubmit}
                 noValidate
             >
@@ -43,7 +44,7 @@ const Form = () => {
                     label="Creator"
                     value={postData.creator}
                     // Using the onchange event target value and spread operator
-                    // to set only one property of the post object
+                    // to set only one property of the post object state
                     onChange={(e) => setPostData({...postData, creator: e.target.value})}
                     fullWidth
                 />
@@ -54,7 +55,7 @@ const Form = () => {
                     label="Title"
                     value={postData.title}
                     // Using the onchange event target value and spread operator
-                    // to set only one property of the post object
+                    // to set only one property of the post object state
                     onChange={(e) => setPostData({...postData, title: e.target.value})}
                     fullWidth
                 />

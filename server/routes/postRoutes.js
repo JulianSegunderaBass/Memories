@@ -8,6 +8,7 @@ const router = express.Router();
 
 // Routes
 // http://localhost:5000/posts
+// Functions are executed when users visit these routes
 router.get('/', getPosts);
 router.post('/', createPost);
 

@@ -14,10 +14,10 @@ import Form from './components/form/Form';
 import useStyles from './styles';
 
 const App = () => {
+    const classes = useStyles();
+    
     // To dispatch an action
     const dispatch = useDispatch();
-
-    const classes = useStyles();
 
     useEffect(() => {
         dispatch(getPosts());

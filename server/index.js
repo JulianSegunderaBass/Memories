@@ -4,7 +4,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
-// Importing Router
+// Importing Routes
 import postRoutes from './routes/postRoutes.js';
 
 // Syntax for initializing express application
@@ -14,7 +14,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-// Express middleware to connect posts to application
+// Express middleware
 // Every route inside of postRoutes is gonna start with /posts
 app.use('/posts', postRoutes);
 

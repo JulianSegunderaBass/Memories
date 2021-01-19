@@ -4,8 +4,11 @@ import useStyles from './PostsStyle';
 import { useSelector } from 'react-redux';
 
 const Posts = () => {
-    const posts = useSelector((state) => state.posts);
     const classes = useStyles();
+    
+    // Callback function has access to global redux state
+    // Returning the "posts" data of the state
+    const posts = useSelector((state) => state.posts);
     console.log(posts);
     return (
         <>
