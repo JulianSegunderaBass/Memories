@@ -19,7 +19,7 @@ app.use(cors());
 app.use('/posts', postRoutes);
 
 // From MongoDB Atlas
-const CONNECTION_URL = "mongodb+srv://JulianBass:Caput_Drac0nis@memories-cluster.f8rf3.mongodb.net/memories-database?retryWrites=true&w=majority";
+const CONNECTION_URL = "mongodb+srv://test-user:test-password@memories-cluster.f8rf3.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
 const PORT = process.env.PORT || 5000;
 
